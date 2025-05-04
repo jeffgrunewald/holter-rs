@@ -1,0 +1,23 @@
+[package]
+name = "holter"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jeff Grunewald <jeff@grunewalddesign.com>"]
+description = "Monitoring crate to combine prometheus metrics export with healthchecks"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jeffgrunewald/holter-rs"
+readme = "README.md"
+
+[dependencies]
+axum = ">=0.6"
+futures = { version = "*", optional = true }
+metrics = { version = ">= 0.21", optional = true }
+metrics-exporter-prometheus = ">=0.15"
+sqlx = { version = ">=0.6", optional = true, features = ["postgres"] }
+tokio = { version = "1", default-features = false }
+tower = { version = "*", optional = true }
+
+[features]
+default = []
+db = ["sqlx"]
+api-metrics = ["futures", "metrics", "tower"]
