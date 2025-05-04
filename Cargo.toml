@@ -10,12 +10,12 @@ readme = "README.md"
 
 [dependencies]
 axum = ">=0.6"
-futures = { version = "*", optional = true }
-metrics = { version = ">= 0.21", optional = true }
+futures = { version = ">=0.3", optional = true }
+metrics = { version = ">=0.21", optional = true }
 metrics-exporter-prometheus = ">=0.15"
 sqlx = { version = ">=0.6", optional = true, features = ["postgres"] }
 tokio = { version = "1", default-features = false }
-tower = { version = "*", optional = true }
+tower = { version = ">=0.4", optional = true }
 
 [features]
 default = []
